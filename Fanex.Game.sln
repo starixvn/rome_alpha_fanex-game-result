@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{70D51173-6AE4-4453-914E-E93E238D267C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{E2DB3FE6-DBFD-4125-9EA9-C0F58E3CF21F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Game.Core", "Fanex.Game.Core\Fanex.Game.Core.csproj", "{22391724-E1DC-48EC-8BB5-804AFF554D2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Game.Keno", "Fanex.Game.Keno\Fanex.Game.Keno.csproj", "{F141E58B-FDC7-4253-A5D1-59970DF19723}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22391724-E1DC-48EC-8BB5-804AFF554D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22391724-E1DC-48EC-8BB5-804AFF554D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22391724-E1DC-48EC-8BB5-804AFF554D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22391724-E1DC-48EC-8BB5-804AFF554D2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F141E58B-FDC7-4253-A5D1-59970DF19723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F141E58B-FDC7-4253-A5D1-59970DF19723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F141E58B-FDC7-4253-A5D1-59970DF19723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F141E58B-FDC7-4253-A5D1-59970DF19723}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22391724-E1DC-48EC-8BB5-804AFF554D2E} = {70D51173-6AE4-4453-914E-E93E238D267C}
+		{F141E58B-FDC7-4253-A5D1-59970DF19723} = {E2DB3FE6-DBFD-4125-9EA9-C0F58E3CF21F}
+	EndGlobalSection
+EndGlobal
