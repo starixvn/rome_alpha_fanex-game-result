@@ -1,22 +1,20 @@
 @charset "utf-8";
 
 body {
-	background: #e8eff5;
+	background: url(../img/bg_conts.jpg) repeat-x;
 }
 body, select, input {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Tahoma,Arial,helvetica,sans-serif;
+	font-size: 11px;
 }
 
-.new1 th {
-	border: 1px solid #3b598d;
+.new1 {
+	 background-color: #b7b7b7 !important;
+	 font-size: 11px;
 }
 .new1 th {
-	background: #5574a7;
-	background: -webkit-linear-gradient(top, #6787bb 0%, #436090 100%);
-	background: -ms-linear-gradient(top, #6787bb 0%, #436090 100%);
-	background: linear-gradient(to bottom, #6787bb 0%, #436090 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6787bb', endColorstr='#436090',GradientType=0 );
-	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+	background: url(../img/bg_header02.jpg) repeat-x;
+	font-size: 11px;
 }
 
 .new1 > tbody > tr {
@@ -26,10 +24,13 @@ body, select, input {
 	background: #c6d4f1 !important;
 }
 .new1 > tbody > tr td {
-	font-weight: bold !important;
+	/*font-weight: bold !important;*/
 }
 .new1 > tbody > tr > td {
 	padding: 5px;
+	border-color: #B7B7B7;
+	background-color: #fff;
+	color: #171717;
 }
 .new1 > tbody > tr:hover {
 	background: #fff5a5 !important;
@@ -51,22 +52,23 @@ body, select, input {
 	color: #B50000;
 }
 .title {
-	color: #365382 !important;
-	font-size: 15px;
-	font-weight: bold;
-	padding: 10px 0 5px;
+	background: url("../img/bg_boxTop.jpg") repeat-x #E7E7E7;
+	border: 1px solid #CACACA;
+	margin: 0 0 7px 0;
+	padding: 5px 0 5px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #171717 !important;
+	font-size: 11px;
 }
-input {
-	background: #5574a7;
-	background: -webkit-linear-gradient(top, #6787bb 0%, #436090 100%);
-	background: -ms-linear-gradient(top, #6787bb 0%, #436090 100%);
-	background: linear-gradient(to bottom, #6787bb 0%, #436090 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6787bb', endColorstr='#436090',GradientType=0 );
-	color: #ffffff;
-	border: 1px solid #3b598d;
-	font-weight: bold;
-	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
-	padding: 3px 5px;
+input[type='submit'], input[type='button'] {
+	background: url("../img/bg_buttonsite.jpg") repeat-x;
+	color: #171717;
+	border: 1px #4D4D4D solid;
+	border-radius: 3px;
+	padding: 0 5px;
+	font-size: 11px;
 }
 .btnBack {
 	background: #ebebec;

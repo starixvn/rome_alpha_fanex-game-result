@@ -143,6 +143,11 @@
     <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\css\keno_css.css" />
     <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\css\main.css" />
     <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\css\rules_css.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\img\bg_boxTop.jpg" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\img\bg_buttonsite.jpg" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\img\bg_buttonsiteOV.jpg" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\img\bg_conts.jpg" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\img\bg_header02.jpg" />
     <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\Result List.htm" />
     <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\Result List_files\jquery.js" />
     <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\Result List_files\language_control.js" />
