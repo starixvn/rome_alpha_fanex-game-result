@@ -1,0 +1,31 @@
+﻿@media all {
+html,body                
+{
+	height: 100%;
+	margin-top: 0px;
+	margin-right: 0px; 
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px; 
+	padding-bottom: 0px;
+	padding-left: 0px; 
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	margin:0;
+      padding:0;
+
+      border:none;
+
+	 margin:0px; font:8pt arial;  }
+.standardSize		{font:9pt arial;
+}
+.smallSize		{font:9pt arial;
+}
+.smallGrid		{font:8pt arial;
+}
+.title		{font:12pt arial;}
+.setHeight {height: 100%;}
+}

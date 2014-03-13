@@ -139,6 +139,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Game\Views\Keno\Document\Integration.html" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\css\global.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\css\keno_css.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\css\main.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\css\rules_css.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\Result List.htm" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\Result List_files\jquery.js" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\Result List_files\language_control.js" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\Result List_files\resultloading.gif" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Accounting\css\global.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Accounting\css\keno_css.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Accounting\css\main.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Accounting\css\rules_css.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Accounting\Result List.htm" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Accounting\Result List_files\jquery.js" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Accounting\Result List_files\language_control.js" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\Accounting\Result List_files\resultloading.gif" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\MemberSite\css\global.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\MemberSite\css\keno_css.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\MemberSite\css\main.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\MemberSite\css\rules_css.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\MemberSite\Result List.htm" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\MemberSite\Result List_files\jquery.js" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\MemberSite\Result List_files\language_control.js" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\MemberSite\Result List_files\resultloading.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -243,6 +267,17 @@
       <Project>{22391724-E1DC-48EC-8BB5-804AFF554D2E}</Project>
       <Name>Fanex.Game.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Areas\Game\Views\Keno\ResultPage\Agency\Result List_files\ScriptResource%281%29.axd" />
+    <None Include="Areas\Game\Views\Keno\ResultPage\Agency\Result List_files\ScriptResource.axd" />
+    <None Include="Areas\Game\Views\Keno\ResultPage\Agency\Result List_files\WebResource.axd" />
+    <None Include="Areas\Game\Views\Keno\ResultPage\Accounting\Result List_files\ScriptResource%281%29.axd" />
+    <None Include="Areas\Game\Views\Keno\ResultPage\Accounting\Result List_files\ScriptResource.axd" />
+    <None Include="Areas\Game\Views\Keno\ResultPage\Accounting\Result List_files\WebResource.axd" />
+    <None Include="Areas\Game\Views\Keno\ResultPage\MemberSite\Result List_files\ScriptResource%281%29.axd" />
+    <None Include="Areas\Game\Views\Keno\ResultPage\MemberSite\Result List_files\ScriptResource.axd" />
+    <None Include="Areas\Game\Views\Keno\ResultPage\MemberSite\Result List_files\WebResource.axd" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
