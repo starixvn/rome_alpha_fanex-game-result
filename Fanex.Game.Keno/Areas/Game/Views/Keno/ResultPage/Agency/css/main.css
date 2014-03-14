@@ -18,10 +18,10 @@ body, select, input {
 }
 
 .new1 > tbody > tr {
-	background: #e4e4e4 !important;
+	background: #fff !important;
 }
 .new1 > tbody > tr:nth-child(even) {
-	background: #c6d4f1 !important;
+	background: #FAF9EE !important;
 }
 .new1 > tbody > tr td {
 	/*font-weight: bold !important;*/
@@ -29,11 +29,10 @@ body, select, input {
 .new1 > tbody > tr > td {
 	padding: 5px;
 	border-color: #B7B7B7;
-	background-color: #fff;
 	color: #171717;
 }
 .new1 > tbody > tr:hover {
-	background: #fff5a5 !important;
+	background: #F8FF8D !important;
 }
 
 .new1 > tbody tr tr {
