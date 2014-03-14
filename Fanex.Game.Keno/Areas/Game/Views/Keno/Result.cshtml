@@ -2,16 +2,22 @@
     Layout = null;
 }
 <!DOCTYPE html>
-
+@{
+    var resultDeailUrl = Url.Content("~") + "game/keno/kenoresult/resultdetail?date=" + ViewBag.date + "&language=" + ViewBag.language +
+                         "&customerId=" + ViewBag.customerId;
+}
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Keno Result</title>
-</head>
-<body>
-    <div>
-        <iframe width="800px" height="580px" frameborder="0" style="overflow-x: hidden" src="@Url.Action("ResultDetail", "KenoResult", new { date = ViewBag.date, language = ViewBag.language, customerId=ViewBag.customerId })" left="0" top="0" id="keno_result">
-    </iframe>
-</div>
-</body>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Keno Result</title>
+    </head>
+    
+    <body>
+        "@resultDeailUrl"
+      
+        <div>
+            <iframe width="800px" height="580px" frameborder="0" style="overflow-x: hidden" src="@resultDeailUrl" left="0" top="0" id="keno_result">
+            </iframe>
+        </div>
+    </body>
 </html>

@@ -55,16 +55,16 @@ namespace Fanex.Game.Keno.Business
 
                 if (!errorCode.Equals("0"))
                 {
-                    LogExtension.LogError("AuthorizationKeno Error UserID:" + userId + Environment.NewLine + "ErrorCode:" + errorCode + Environment.NewLine +
+                   throw new Exception("AuthorizationKeno Error UserID:" + userId + Environment.NewLine + "ErrorCode:" + errorCode + Environment.NewLine +
                                     "ErrorMsg:" + authorizationResult.ErrorMsg);
-                    return string.Empty;
+                   
                 }
                 authorizationKey = authorizationResult.Data.Authorization;
             }
             catch (Exception ex)
             {
-                LogExtension.LogError(ex);
-                authorizationKey = @"h4P4!IAAAAP6x4u6g98eXN0GiWUYfhwLOARG8aWK2pZXZYBPS_Nvt4QAAAAGmGJuF358Vh5615NgIFpIFa0kZCajNE-76B9yiSs6uZ5aPoqS_cmWY2pUO_AA_aQt0LRc-HRAMUZJODFoj8ReHT2zGN6O9K3uRD_aAzlaex9xE4JhuZUZHVgqAmheR89Pqya1dZEgSXqUm7CweCq21-RXrR8JQqu3dc1jLTI_Kax9c8udzXYKtaV0Vr9JkM4OBLcNl2dErheQy5LtoKhbIgQSk1eXrfdLXRorXV3IVeigdgXVvcgDh3IIqzPPGMI1l5RXzqeQtMaJQNSkRuC5PfccqAQ3aYcPRlmKCUCojcg";
+                throw ex;
+                //authorizationKey = @"h4P4!IAAAAP6x4u6g98eXN0GiWUYfhwLOARG8aWK2pZXZYBPS_Nvt4QAAAAGmGJuF358Vh5615NgIFpIFa0kZCajNE-76B9yiSs6uZ5aPoqS_cmWY2pUO_AA_aQt0LRc-HRAMUZJODFoj8ReHT2zGN6O9K3uRD_aAzlaex9xE4JhuZUZHVgqAmheR89Pqya1dZEgSXqUm7CweCq21-RXrR8JQqu3dc1jLTI_Kax9c8udzXYKtaV0Vr9JkM4OBLcNl2dErheQy5LtoKhbIgQSk1eXrfdLXRorXV3IVeigdgXVvcgDh3IIqzPPGMI1l5RXzqeQtMaJQNSkRuC5PfccqAQ3aYcPRlmKCUCojcg";
             }
             
             return authorizationKey;
