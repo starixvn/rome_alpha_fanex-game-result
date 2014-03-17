@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Game.Core", "Fanex.Ga
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Game.Keno", "Fanex.Game.Keno\Fanex.Game.Keno.csproj", "{F141E58B-FDC7-4253-A5D1-59970DF19723}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Game.Keno.Resources", "Fanex.Game.Keno.Resources\Fanex.Game.Keno.Resources.csproj", "{82A8306A-A554-4050-A1F2-33596A7169B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{F141E58B-FDC7-4253-A5D1-59970DF19723}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F141E58B-FDC7-4253-A5D1-59970DF19723}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F141E58B-FDC7-4253-A5D1-59970DF19723}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82A8306A-A554-4050-A1F2-33596A7169B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82A8306A-A554-4050-A1F2-33596A7169B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82A8306A-A554-4050-A1F2-33596A7169B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82A8306A-A554-4050-A1F2-33596A7169B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,5 +36,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{22391724-E1DC-48EC-8BB5-804AFF554D2E} = {70D51173-6AE4-4453-914E-E93E238D267C}
 		{F141E58B-FDC7-4253-A5D1-59970DF19723} = {E2DB3FE6-DBFD-4125-9EA9-C0F58E3CF21F}
+		{82A8306A-A554-4050-A1F2-33596A7169B0} = {E2DB3FE6-DBFD-4125-9EA9-C0F58E3CF21F}
 	EndGlobalSection
 EndGlobal
