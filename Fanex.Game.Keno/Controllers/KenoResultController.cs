@@ -72,8 +72,7 @@ namespace Fanex.Game.Keno.Controllers
         /// <returns>KENO URL to get result.</returns>
         private string BuildParam(string resultDate, string action, string language, int userId)
         {
-            string container = Request.Url + "?cust=" + KenoSection.Instance.GameName +
-                "&action=R&siteID=" + KenoSection.Instance.SiteId + "&lang=" + language + "&date=" + resultDate;
+            string container = Request.Url.ToString();
             var param = new StringBuilder();
             param.Append("?Authorization=" + _gameService.GetAuthorizationKey(userId));
             param.Append("&cust=" + KenoSection.Instance.GameName);
