@@ -21,7 +21,7 @@ namespace Fanex.Game.Keno.Controllers
     /// <summary>
     /// Class KenoResultController.
     /// </summary>
-    public class KenoResultController : Controller
+    public class KenoResultController : BaseController
     {
         private readonly IKenoGameService _gameService;
 

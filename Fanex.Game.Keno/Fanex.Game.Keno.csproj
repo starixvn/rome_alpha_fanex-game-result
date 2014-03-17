@@ -240,7 +240,9 @@
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -271,6 +273,10 @@
     <ProjectReference Include="..\Fanex.Game.Core\Fanex.Game.Core.csproj">
       <Project>{22391724-E1DC-48EC-8BB5-804AFF554D2E}</Project>
       <Name>Fanex.Game.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fanex.Game.Keno.Resources\Fanex.Game.Keno.Resources.csproj">
+      <Project>{82A8306A-A554-4050-A1F2-33596A7169B0}</Project>
+      <Name>Fanex.Game.Keno.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
