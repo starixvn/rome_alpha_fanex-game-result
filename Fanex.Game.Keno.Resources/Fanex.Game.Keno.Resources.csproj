@@ -48,6 +48,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Message.ja-JP.resx" />
+    <EmbeddedResource Include="Message.ko-KR.resx" />
+    <EmbeddedResource Include="Message.vi-VN.resx" />
     <EmbeddedResource Include="Message.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Message.Designer.cs</LastGenOutput>
