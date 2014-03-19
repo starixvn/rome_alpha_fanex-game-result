@@ -1,0 +1,500 @@
+﻿@charset "utf-8";
+footer, .copy, .txt-white {
+	color:#777777;
+	text-shadow: 1px 1px 1px rgba(255,255,255,1);
+}
+.Toolbar {
+	border-top-color: #FFFFFF;
+	border-bottom-color: #1C3158;
+	background-image:url(../images/bg_toolbar.png);
+}
+.Tool-btn.btn-back:before {
+	background: #1C3668;
+}
+.Tool-btn, .Tool-btn.btn-back:after{
+	color:#FFFFFF;
+	border-color:#1C3668;
+	background-image:url(../images/bg_toolBtn.png);
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.8);
+	-webkit-box-shadow:  0px 1px 2px rgba(255,255,255,0.8);
+}
+.Tool-btn.btn-pressed, .Tool-btn.btn-back.btn-pressed:after {
+	background-image:url(../images/bg_toolBtn-pressed.png);
+}
+.Tool-btnBettype {
+	color:#395a9b;
+	border-color: #666666;
+	background-image:url(../images/bg_toolBtnBettype.png);
+	text-shadow: 1px 1px 1px #ffffff;
+	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.4), inset 0 0 3px #FFFFFF;
+}
+.Tool-btnBettype.live {
+	color:#E50000;
+	border-color: #E50000;
+	background-image:url(../images/bg_toolBtnBettype_live.png);
+	text-shadow: 1px 1px 1px #ffffff;
+	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.4), inset 0 0 3px #FFFFFF;
+}
+.btn-refresh, .btn-more {
+	color:#395a9b;
+	border-color: #666666;
+	background-image:url(../images/bg_btnRefresh.png);
+	text-shadow: 1px 1px 1px #ffffff;
+	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.4), inset 0 0 3px #FFFFFF;
+}
+.Tool-btnBettype em {
+	color:#e03838;
+}
+.Tool-btnEvent{color:#FFFFFF;
+	border-color: #70463a;
+	background-image:url(../images/bg_toolBtnEvent.png);
+	-webkit-box-shadow: 0px 1px 1px #e3effd;
+	text-shadow:0px -1px 1px #000;
+}	
+.Tool-btnBettype.btn-pressed{
+	color:#395a9b;
+	background-image:url(../images/bg_toolBtnBettype-pressed.png);
+}
+.Tool-btnEvent.btn-pressed{
+	color:#FFFFFF;
+	background-image:url(../images/bg_toolBtnEvent-pressed.png);
+}
+.btn-refresh.btn-pressed, .btn-more.btn-pressed {
+	background-image:url(../images/bg_btnRefresh-pressed.png);
+}
+.txt-tool {
+	color:#000000;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+}
+.btn-sumit {
+	background-image:url(../images/bg_btnSubmit.png);
+	color:#202020;
+	-webkit-box-shadow: 0px 1px 3px #000000;
+}
+.btn-sumit.btn-pressed {
+	color:#202020;
+	background-image:url(../images/bg_btnSubmit-pressed.png);
+}
+.btn-Odds, .btn-Odds-lose, .btn-Odds-small, .btn-Odds-smallS {
+	color:#232323;
+	border-color:#9F9F9F;
+	background-image:url(../images/bg_btnOdds.png);
+	text-shadow: 1px 1px 1px #FFFFFF;
+	-webkit-box-shadow: none;
+}
+.btn-Odds-lose {
+	color:#b50000;
+}
+.btn-Odds.btn-pressed, .btn-Odds-lose.btn-pressed, .btn-Odds-small.btn-pressed, .btn-Odds-smallS.btn-pressed {
+	background-image:url(../images/bg_btnOdds-pressed.png);
+}
+.btn-betFast {	
+	color:#FFFFFF;
+	border-color:#505050;
+	background-image:url(../images/bg_btnBetFast.png);
+	text-shadow: -1px -1px 1px #555555;
+	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.4);
+}
+.btn-addparlay {
+	color:#FFF;
+	border-color: #000000;
+	background-image:url(../images/bg_btnAddparlay.png);
+	text-shadow: -1px -1px 1px #555555;
+	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.4);
+}
+.btn-bet {
+	color:#395a9b;
+	border-color: #666666;
+	background-image:url(../images/bg_btnBet.png);
+	text-shadow: 1px 1px 1px #ffffff;
+	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.4);
+}
+.btn-bet.btn-pressed, .btn-betFast.btn-pressed, .btn-addparlay.btn-pressed {
+	color:#464646;
+	background-image:url(../images/bg_btnBet-pressed.png);
+	text-shadow: 1px 1px 1px #ffffff;
+}
+.btn-del {
+	background-image:url(../images/bg_nubox.png);
+	border-color:#FFF;
+}
+.btn-remov {
+	color:#FFF;
+	text-shadow:0px -1px 1px #000;
+	border-color:#8a9caa;
+	border-top-color:#4e687c;
+	-webkit-box-shadow: 0px 1px 1px #e3effd;
+	background-image:url(../images/bg_btnRemov.png);
+}
+.btn-remov.btn-pressed {
+	background-image:url(../images/bg_btnRemov-pressed.png);
+}
+.btn-open, .nolist {
+	border-color: #1b1b1b;
+	-webkit-box-shadow: inset 0px 1px 1px #ffffff;
+}
+.btn-open, .icon-success, .icon-number {
+	background-image:url(../images/bg_btnOpen.png);
+}
+.btn-info {
+	border-color: #1b1b1b;
+	background-image:url(../images/bg_btnInfo.png);
+}
+.btn-open.btn-pressed{
+	border-color: #1b1b1b;
+	background-image:url(../images/bg_btnOpen-pressed.png);
+}
+.btn-info.btn-pressed {
+	border-color: #1b1b1b;
+	background-image:url(../images/bg_btnInfo-pressed.png);
+}
+.OddsChange, .OddsChange.btn-pressed {
+	background-image:url(../images/bg_btnOddsChange.png);
+	border-color: #FF8E8E;
+	background-size: cover;
+}
+.icon-Noinfo {
+	background-image: url(../images/bg_nubox.png);
+}
+.icon-number {
+	color:#FFFFFF;
+}
+.btn-refresh .icon-refresh:before {
+	background-color:#FFFFFF;
+}
+.btn-refresh .icon-refresh:after{
+	background-color: #395a9b;
+}
+.color01 {color:#FFF;
+	background-color:#FF5A00;
+}
+.color02 {color:#FFF;
+	background-color:#23508C;
+}
+.color03, .color04, .color05, .color06 {
+	color:#FFF;
+	background-color:#8b8b8b;
+}
+.input-text {
+	color:#2e2d2d;
+	text-shadow:1px 1px 1px #fff;
+}
+.arrow {
+	border-color:#b2b2b2;
+}
+.input-stake, .seleBoxbg {
+	background-color:#FFFFFF;
+	-webkit-box-shadow:inset 1px 3px 5px rgba(0,0,0,0.5);
+}
+.Oddstable th {
+	color: #333333;
+	text-shadow: 1px 1px 1px #FFFFFF;
+	background-color: #D4D4D4;
+	border-bottom-color:#878787;	
+}
+.Oddstable th.bgcolumn {
+	background-color: #C6C6C6 !important;
+}
+.Oddstable th.leaguebg {
+	color:#FFFFFF;
+	border-top-color: #273E67;
+	background-image:url(../images/bg_league.png);
+	text-shadow:-1px -1px 1px #000000;
+}
+.Oddstable th.matchbg {
+	background-image:url(../images/bg_match.png);
+	color: #FFFFFF;
+	border-top-color:#CDD8E0;
+	border-bottom-color:#3a548a;
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.8);
+}
+.Oddstable td {
+	border-bottom-color:#BABABA;
+}
+.dubline {
+	border-right-color: #8B8B8B !important;
+}
+.txt-live {
+	color:#FFFFFF;
+	background-color:#FF0030;
+}
+.txt-Score, .txt-Score.Change {
+	color:#FFFFFF;
+	background-color:#405b94;
+}
+.txt-Score.numberGame .ball, .ball.open {
+	color:#FFF;
+	background-image:url(../images/bg_ballOpen.png?v=20131206001);
+}
+.txt-Time, .txt-vs {
+	color:#FFFFFF;
+}
+.txt-FavTeam, .txt-UdrDogTeam {
+	color:#FFFFFF;
+}
+.blk-Teams {
+	background-color:#2f4e8f;
+}
+.blk-Teams .color01, .blk-Teams .color02 {
+	color:#002853;
+	background-color:#8ca9d7;
+}
+.Goal {
+	color:#717171;
+	text-shadow: 1px 1px 1px #FFFFFF;
+}
+.BetProcessBox {
+	background-color:#2f4e8f;
+	-webkit-box-shadow: 0px -3px 15px #666;
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.8);
+}
+.BetProcess {
+	background-image:url(../images/bg_betProcess.png);
+	color:#FFFFFF;
+}
+.txt-betinfo {
+	color:#a0c0ff;
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.8);
+}
+.txt-betChoose {
+	color:#FFFFFF;
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.8);
+}
+.txt-FavOdds {
+	color:#FFFFFF;
+}
+.txt-UdrDogOdds {
+	color:#ff0030;
+}
+.txt-match {
+	color:#999999;
+}
+.txt-MixP-Choose {
+	color:#333333;
+}
+.txt-Choose, .BetInfoBox, .loadingInfo, div.BetInfoBox>div.Cancel .txt-match, .Oddstable td {
+	color:#292929;
+}
+.txt-Choose {
+	text-shadow: 1px 1px 1px rgba(255,255,255,1);
+}
+.txt-league {
+	text-shadow: 1px 1px 1px rgba(255,255,255,1);
+}
+.txt-match {
+	text-shadow: 1px 1px 1px rgba(255,255,255,1);
+}
+.SearchBox, .BetlistBox h2, .popup {
+	background:#5379B6;
+}
+.SearchBox, .BetlistBox h2, .BetlistBox h2 a {
+	color:#FFFFFF;
+}
+.BetlistBox .ComBox {
+	background-color:#2F4E8F;
+	color:#FFF;
+}
+.BetlistBox .txt-Time {
+	color:#BFD4FE;
+}
+div.BetInfoBox, .loadingInfo {
+	text-shadow: 1px 1px 1px #FFF;
+}
+div.BetInfoBox .StatBox, .BetlistBox h2 {
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.6);
+}
+div.BetInfoBox>div:nth-child(odd), .bgodd, .bgeven, .loadingInfo {
+	border-top-color:#FFFFFF;
+	background-color: #FFFFFF;
+}
+div.BetInfoBox>div:nth-child(even), .bgcolumn {
+	background-color:#EEEEEE;
+	border-top-color: white;
+}
+div.BetInfoBox.Watting>div:nth-child(odd), .Livebgodd, .Livebgeven {
+	background-color:#feebeb;
+}
+div.BetInfoBox.Watting>div:nth-child(even), .Livebgodd .bgcolumn, .Livebgeven .bgcolumn {
+	background-color:#FDDBDB;
+}
+.StatBox {
+	background-color:#b4b3b3;
+	color:#FFF;
+}
+.txt-date {
+	color:#292929;
+}
+.txt-stake {
+	color:#5379B6;
+	background-color:#DDE8FD;
+}
+div.BetInfoBox>div.Cancel {
+	background-color:#848484 !important;
+}
+.SetBox {	
+	background-image:url(../images/bg_btnMenuOutT.png);
+	background-size: 100% 100%;
+}
+.BetlistBox .BetInfoBox {
+	box-shadow:none;
+	-webkit-box-shadow:none;
+}
+.Actbox, ul.SubMu li, ul.Act li a:link {
+	color:#262626;
+}
+.Actbox h2 {
+	text-shadow:0px 2px 1px #FFF;
+}
+ul.Act li, ul.SubMu li {
+	background-color:rgba(255,255,255,1);
+}
+ul.Act.alpha li {
+	background-color:rgba(255,255,255,.5); /*Color as above, different transparency*/
+}
+ul.Act li, ul.SubMu li, ul.Act li:first-child, ul.SubMu li:first-child {
+	border-color: #4e687c;
+}
+ul.Act li.btn-pressed, ul.SubMu li.btn-pressed, ul.SubMu li:hover {
+	background-image:url(../images/bg_subMuLi-pressed.png);
+	background-size: contain;
+	color:#FFFFFF;
+	text-shadow:-1px -1px 1px rgba(0,0,0,0.8);
+}
+ul.Act li em, input[type="text"], input[type="password"], input[type="search"], input[type="tel"], select, .Choose {
+	color:#4E6B93;
+}
+ul.Act li.btn-pressed .txt-league, ul.Act li.btn-pressed .txt-match {
+	text-shadow:-1px -1px 1px rgba(0,0,0,0.8);
+}
+ul.Act li.btn-pressed .icon-spOP {
+	background-color: #FFFFFF;
+}
+.overlay {
+	background-color:#000;
+}
+.popup {
+	-webkit-box-shadow: 0px 0px 10px #000000;
+}
+.popup-border {
+	border-color: #ffffff;
+	-webkit-box-shadow:inset 0px 0px 10px #ffffff;
+}
+.popup h2 {
+	color:#FFFFFF;
+}
+hr {
+	border-top-color:#FFFFFF;
+}
+.SearchBar {
+	background-image:url(../images/bg_searchBar.png);
+	background-size: contain;
+}
+input[type="search"] {
+	background-color:#FFF;
+	border-color:#8d8d8d;
+	-webkit-box-shadow:inset 0px 3px 10px #999;
+}
+.SearchBar .icon-color1 {
+	background-color:#aaaaaa;
+}
+/*iconstyle.css*/
+.btn-Atxt {
+	color:#292929;
+	text-shadow:1px 1px 1px rgba(255,255,255,1);
+}
+.btn-Atxt2 {
+	color:#FFFFFF;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.8);
+}
+.btn-menu-out-T {
+	background-image:url(../images/bg_btnMenuOutT.png);
+	background-size: 100% 100%;
+}
+.btn-menu-out-D, .btn-menuT.color01, .btn-menu-out-T.menuEvent .btn-menuT.color01 {
+	background:#385388;
+}
+b.Mcaret {
+	border-bottom-color:#385388;
+}
+.btn-menu-out-D {
+	background-image:url(../images/bg_btnMenuOutD.png);
+	background-size: 100% 100%;
+}
+.btn-menuT, .btn-menuD {
+	background: #fff;
+}
+.btn-menuT {
+	background-image:url(../images/bg_btnMenuT.png);
+	-webkit-box-shadow: 0px 6px 8px rgba(0,0,0,0.6);
+}
+.btn-menuT.btn-pressed {
+	background-image:url(../images/bg_btnMenuT-pressed.png);
+}
+.btn-menuD {
+	background-image:url(../images/bg_btnMenuD.png);
+	-webkit-box-shadow: 0px 6px 8px rgba(0,0,0,0.6);
+}
+.btn-menuD.color01 {
+	background-image:url(../images/bg_btnMenuD-color01.png);
+}
+.btn-menuD.btn-pressed {
+	background-image:url(../images/bg_btnMenuD-pressed.png);
+}
+.btn-menu-out-T.menuEvent {
+	background-image:url(../images/bg_btnMenuOutTEvent.png);
+}
+.btn-menu-out-T.menuEvent .btn-menuT {
+	background-image:url(../images/bg_btnMenuTEvent.png);
+}
+.btn-menu-out-T.menuEvent .btn-menuT.btn-pressed {
+	background-image:url(../images/bg_btnMenuTEvent-pressed.png);
+}
+.nubox-out {
+	background: #FFFFFF;
+}
+.nubox-in {
+	background-image:url(../images/bg_nubox.png);
+	color:#FFFFFF;
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.6);
+}
+.nubox-out.reject .nubox-in {
+	background-image:url(../images/bg_nuboxReject.png);
+}
+/*icon: sport*/
+.icon-spOP {
+	background-color:#000000;
+}
+.leaguebg .icon-spOP, .matchbg .icon-spOP, ul.Act li.btn-pressed .icon-spOP {
+	background-color:#FFFFFF;
+}
+/*loading*/
+body, .box .loadingInfo {
+	background-image:url(../images/bg_body.jpg);
+	background-size:cover;
+}
+#BetBlock .box .loadingInfo, .btn-menu-out-T .box .loadingInfo {
+	color:#FFFFFF;
+	background-color: rgba(0,0,0,0.8);
+}
+.property {
+	text-shadow: -1px -1px 1px rgba(0,0,0,0.6);
+}
+.btn-pressed {-webkit-box-shadow:inset 0px 2px 5px rgba(0,0,0,0.8);}
+.Tool-btn.btn-back.btn-pressed {-webkit-box-shadow:inset -3px 2px 5px rgba(0,0,0,0.8);}
+/*numberGame numberGroup*/
+.numberGroup strong {text-shadow: 1px 1px 1px #FFF;}
+/* ball */
+.ball {
+	color:#FFFFFF;
+	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.8);
+	box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.8);
+	background-image:url(../images/bg_ball.png);
+}
+/***Only Android OS Start***/
+body.android * {
+	text-shadow:none !important;
+	box-shadow:none !important;
+	-webkit-box-shadow:none !important;
+}
+/***Only Android OS End***/
