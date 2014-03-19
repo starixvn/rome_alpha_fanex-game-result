@@ -61,6 +61,15 @@ namespace Fanex.Game.Keno.Configurations
             }
         }
 
+        [ConfigurationProperty("extendTokenUrl", IsRequired = false)]
+        public string ExtendTokenUrl
+        {
+            get
+            {
+                return (string)base["extendTokenUrl"];
+            }
+        }
+
         [ConfigurationProperty("vendor", IsRequired = false)]
         public string Vendor
         {

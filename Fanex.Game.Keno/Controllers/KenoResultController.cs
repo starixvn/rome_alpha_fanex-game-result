@@ -10,7 +10,6 @@
 
 namespace Fanex.Game.Keno.Controllers
 {
-
     using System;
     using System.Text;
     using System.Web;
@@ -60,6 +59,18 @@ namespace Fanex.Game.Keno.Controllers
 
             var kenoResultUrl = KenoSection.Instance.KenoResultUrl + BuildParam(resultDate, action, language, userId);
             return Redirect(kenoResultUrl);
+        }
+
+        /// <summary>
+        /// Extend token.
+        /// </summary>
+        ///<param name="userId">The user identifier.</param>
+        /// <returns>Result of extend action.</returns>
+        [HttpPost]
+        public JsonResult ExtendToken(int userId)
+        {
+            var result = _gameService.ExtendToken(userId);
+            return Json(result);
         }
 
         /// <summary>

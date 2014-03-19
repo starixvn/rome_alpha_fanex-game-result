@@ -69,5 +69,48 @@ namespace Fanex.Game.Keno.Business
             
             return authorizationKey;
         }
+
+        /// <summary>
+        /// Extend token service.
+        /// </summary>
+        /// <param name="userId">The user identifier.</param>
+        /// <returns>Result of extend token.</returns>
+        public AuthorizationResult ExtendToken(int userId)
+        {
+            AuthorizationResult extendTokenResult = new AuthorizationResult();
+            try
+            {
+                string extendTokenUrl = KenoSection.Instance.ExtendTokenUrl;
+                string vendor = KenoSection.Instance.Vendor;
+                string vendorKey = KenoSection.Instance.VendorKey;
+                extendTokenUrl = string.Format(extendTokenUrl, vendor, vendorKey, userId);
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(extendTokenUrl);
+
+                request.Method = "Get";
+                request.Accept = "application/json";
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                StreamReader reader = new StreamReader(response.GetResponseStream());
+                StringBuilder output = new StringBuilder();
+                output.Append(reader.ReadToEnd());
+                response.Close();
+                extendTokenResult = JsonConvert.DeserializeObject<AuthorizationResult>(output.ToString());
+
+                string errorCode = Convert.ToString(extendTokenResult.ErrorCode);
+
+                if (!errorCode.Equals("0"))
+                {
+                    throw new Exception("Extend Token Error UserID:" + userId + Environment.NewLine + "ErrorCode:" + errorCode + Environment.NewLine +
+                                     "ErrorMsg:" + extendTokenResult.ErrorMsg);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return extendTokenResult;
+        }
     }
 }

@@ -10,6 +10,8 @@
 
 namespace Fanex.Game.Keno.Business
 {
+    using Fanex.Game.Keno.Models;
+
     /// <summary>
     /// Interface IKenoGameService.
     /// </summary>
@@ -21,5 +23,12 @@ namespace Fanex.Game.Keno.Business
         /// <param name="userId">The user identifier.</param>
         /// <returns>Authorization key for specific system.</returns>
         string GetAuthorizationKey(int userId);
+
+        /// <summary>
+        /// Extend token service.
+        /// </summary>
+        /// <param name="userId">The user identifier.</param>
+        /// <returns>Result of extend token.</returns>
+        AuthorizationResult ExtendToken(int userId);
     }
 }
