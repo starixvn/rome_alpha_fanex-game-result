@@ -740,6 +740,7 @@ ul.SubMu li:first-child {
 }
 .SearchBox {
 	padding:10px;
+	border: 1px solid #CACACA;
 }
 .SearchBox .seleBox {
 	margin-right:20px;
@@ -811,7 +812,7 @@ ul.SubMu li:first-child {
 	text-align:center;
 	border-top-width:0px;
 	border-top-style: solid;	
-	border-bottom-width:1px;
+	border-bottom-width: 0;
 	border-bottom-style: solid;
 	padding:4px;
 	vertical-align: middle;

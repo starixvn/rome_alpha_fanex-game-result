@@ -209,7 +209,7 @@ footer, .copy, .txt-white {
 	text-shadow: -1px -1px 1px rgba(0,0,0,0.8);
 }
 .Oddstable td {
-	border-bottom-color:#BABABA;
+	/*border-bottom-color:#BABABA;*/
 }
 .dubline {
 	border-right-color: #8B8B8B !important;
@@ -472,7 +472,6 @@ b.Mcaret {
 /*loading*/
 body, .box .loadingInfo {
 	background-image:url(../images/bg_body.jpg);
-	background-size:cover;
 }
 #BetBlock .box .loadingInfo, .btn-menu-out-T .box .loadingInfo {
 	color:#FFFFFF;
