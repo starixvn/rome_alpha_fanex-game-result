@@ -2,7 +2,8 @@
 @import url(color.css);
 
 html, body, input, textarea, select {
-	font-family:  "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;
+	/*font-family:  "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;*/
+	font-family: Tahoma,Arial,helvetica,sans-serif;
 }
 body {
 	width:960px;
@@ -735,7 +736,7 @@ ul.SubMu li:first-child {
 .seleBox {
 	border:0px;
 	background: transparent;
-	font-size:18px;
+	font-size: 18px;
 }
 .SearchBox {
 	padding:10px;
@@ -773,7 +774,10 @@ ul.SubMu li:first-child {
 }
 /*table: odds*/
 .Oddstable {
-	font-size:20px;
+	font-size: 18px;
+	background: #B1B1B1;
+	border-collapse: separate;
+	border-spacing: 1px;
 }
 .Oddstable th {
 	padding:4px;
@@ -784,7 +788,7 @@ ul.SubMu li:first-child {
 	border-bottom-style: solid;*/
 	border-top-width:0px;
 	border-top-style: solid;	
-	border-bottom-width:1px;
+	border-bottom-width: 0;
 	border-bottom-style: solid;
 	white-space:nowrap;
 }
@@ -1460,8 +1464,8 @@ img.btn-logo {
 	background-size: contain;
 }
 .Oddstable, .SetBox, .BetInfoBox, .BetlistBox, .btn-menu-out-D {
-	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+	/*-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);*/
 }
 .Oddstable ~ .Oddstable {
 	-webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.8);

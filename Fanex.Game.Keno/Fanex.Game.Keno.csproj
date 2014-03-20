@@ -146,6 +146,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Game\Views\Keno\Document\Integration.html" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\css\color.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\css\global.css" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\images\bg_body.jpg" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\images\bg_boxTop.jpg" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\images\bg_btnInfo.png" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\images\bg_btnOpen.png" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\images\bg_header02.jpg" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\images\bg_nubox.png" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\images\bg_toolbar.png" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\images\icon_keno.png" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\images\loding.gif" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\images\logo.png" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\images\spacer.gif" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\images\tool_icon.png" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\Result.html" />
+    <Content Include="Areas\Game\Views\Keno\ResultPage\AgencySmart\Statement.html" />
     <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\css\global.css" />
     <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\css\keno_css.css" />
     <Content Include="Areas\Game\Views\Keno\ResultPage\Agency\css\main.css" />

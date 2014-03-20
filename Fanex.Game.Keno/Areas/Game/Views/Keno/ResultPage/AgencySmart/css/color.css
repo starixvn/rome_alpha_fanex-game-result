@@ -187,13 +187,13 @@ footer, .copy, .txt-white {
 	-webkit-box-shadow:inset 1px 3px 5px rgba(0,0,0,0.5);
 }
 .Oddstable th {
-	color: #333333;
-	text-shadow: 1px 1px 1px #FFFFFF;
-	background-color: #D4D4D4;
-	border-bottom-color:#878787;	
+	color: #fff;
+	/*text-shadow: 1px 1px 1px #FFFFFF;
+	background-color: #D4D4D4;*/
+	background: url(../images/bg_header02.jpg) repeat-x #6A6869;
 }
 .Oddstable th.bgcolumn {
-	background-color: #C6C6C6 !important;
+	background-color: #6A6869 !important;
 }
 .Oddstable th.leaguebg {
 	color:#FFFFFF;
@@ -285,7 +285,9 @@ footer, .copy, .txt-white {
 	text-shadow: 1px 1px 1px rgba(255,255,255,1);
 }
 .SearchBox, .BetlistBox h2, .popup {
-	background:#5379B6;
+	/*background:#5379B6;*/
+	background: url("../images/bg_boxTop.jpg") repeat-x #E7E7E7;
+	margin:  7px 0;
 }
 .SearchBox, .BetlistBox h2, .BetlistBox h2 a {
 	color:#FFFFFF;
@@ -305,7 +307,7 @@ div.BetInfoBox .StatBox, .BetlistBox h2 {
 }
 div.BetInfoBox>div:nth-child(odd), .bgodd, .bgeven, .loadingInfo {
 	border-top-color:#FFFFFF;
-	background-color: #FFFFFF;
+	background-color: #FAF9EE ;
 }
 div.BetInfoBox>div:nth-child(even), .bgcolumn {
 	background-color:#EEEEEE;
