@@ -91,6 +91,7 @@ namespace Fanex.Game.Keno.Controllers
             param.Append("&action=" + action);
             param.Append("&lang=" + language);
             param.Append("&date=" + resultDate);
+            param.Append("&st=B");
             param.Append("&redirectURL=" + HttpUtility.UrlEncode(container));
             return param.ToString();
         }
