@@ -16,6 +16,7 @@ namespace Fanex.Game.Keno.Controllers
     using System.Web.Mvc;
     using Business;
     using Configurations;
+    using Constants;
 
     /// <summary>
     /// Class KenoResultController.
@@ -23,12 +24,6 @@ namespace Fanex.Game.Keno.Controllers
     public class KenoResultController : BaseController
     {
         private readonly IKenoGameService _gameService;
-
-        public KenoResultController()
-            : this(null)
-        {
-            var instance = string.Empty;
-        }
 
         public KenoResultController(IKenoGameService kenoGameService)
         {
@@ -42,8 +37,10 @@ namespace Fanex.Game.Keno.Controllers
         public ActionResult Index()
         {
             ViewBag.date = Request["date"];
-            ViewBag.language= Request["language"];
+            ViewBag.language = Request["language"];
             ViewBag.customerId = Request["customerid"];
+            ViewBag.productId = Request["productId"];
+
             return View(@"~\Areas\Game\Views\Keno\Result.cshtml");
         }
 
@@ -55,10 +52,18 @@ namespace Fanex.Game.Keno.Controllers
         {
             string resultDate = Request["date"], action = "R", language = Request["language"];
             var objUserId = Request["customerid"];
-            var userId = string.IsNullOrEmpty(objUserId)? 0 : Convert.ToInt32(objUserId);
 
-            var kenoResultUrl = KenoSection.Instance.KenoResultUrl + BuildParam(resultDate, action, language, userId);
-            return Redirect(kenoResultUrl);
+            var objCustLevelId = Request["custLevelId"];
+            var objProductId = Request["productId"];
+
+            var userId = string.IsNullOrEmpty(objUserId) ? 0 : Convert.ToInt32(objUserId);
+            var custLevelId = string.IsNullOrEmpty(objCustLevelId) ? 0 : Convert.ToInt32(objCustLevelId);
+            var productId = string.IsNullOrEmpty(objProductId) ? 0 : Convert.ToInt32(objProductId);
+
+            var resultUrl = GetResultUrl(productId) +
+                BuildParam(resultDate, action, language, userId, custLevelId, productId);
+
+            return Redirect(resultUrl);
         }
 
         /// <summary>
@@ -67,9 +72,9 @@ namespace Fanex.Game.Keno.Controllers
         ///<param name="userId">The user identifier.</param>
         /// <returns>Result of extend action.</returns>
         [HttpPost]
-        public JsonResult ExtendToken(int userId)
+        public JsonResult ExtendToken(int userId, int productId)
         {
-            var result = _gameService.ExtendToken(userId);
+            var result = _gameService.ExtendToken(userId, productId);
             return Json(result);
         }
 
@@ -81,19 +86,84 @@ namespace Fanex.Game.Keno.Controllers
         /// <param name="language">The language.</param>
         /// <param name="userId">The user identifier.</param>
         /// <returns>KENO URL to get result.</returns>
-        private string BuildParam(string resultDate, string action, string language, int userId)
+        private string BuildParam(
+            string resultDate,
+            string action,
+            string language,
+            int userId,
+            int custLevelId,
+            int productId)
         {
             string container = Request.Url.ToString();
             var param = new StringBuilder();
-            param.Append("?Authorization=" + _gameService.GetAuthorizationKey(userId));
+
+            var siteId = GetSiteId(custLevelId);
+
+            param.Append("?Authorization=" + _gameService.GetAuthorizationKey(userId, productId));
             param.Append("&cust=" + KenoSection.Instance.GameName);
-            param.Append("&siteID=" + KenoSection.Instance.SiteId);
+            param.Append("&siteID=" + siteId);
             param.Append("&action=" + action);
-            param.Append("&lang=" + language);
+            param.Append("&lang=" + GetVendorLanguage(language));
             param.Append("&date=" + resultDate);
             param.Append("&st=B");
             param.Append("&redirectURL=" + HttpUtility.UrlEncode(container));
+
             return param.ToString();
+        }
+
+        private string GetSiteId(int custLevelId)
+        {
+            var index = 0;
+
+            switch (custLevelId)
+            {
+                case UserLevelConstants.Super:
+                    index = 0;
+                    break;
+                case UserLevelConstants.Master:
+                    index = 1;
+                    break;
+                default:
+                    index = 2;
+                    break;
+            }
+
+            var siteIds = KenoSection.Instance.SiteIds.Split(',');
+
+            return index <= siteIds.Length ? siteIds[index] : string.Empty;
+        }
+
+        private string GetResultUrl(int productId)
+        {
+            if (productId == 28)
+            {
+                return KenoSection.Instance.LotteryResultUrl;
+            }
+
+            return KenoSection.Instance.KenoResultUrl;
+        }
+
+        private string GetVendorLanguage(string languageKey)
+        {
+            var language = languageKey.ToLowerInvariant();
+
+            switch (language)
+            {
+                case "ct":
+                    return "ch";
+                case "cs":
+                    return "cs";
+                case "th":
+                    return "th";
+                case "j":
+                    return "jp";
+                case "ko":
+                    return "ko";
+                case "vi":
+                    return "vn";
+                default:
+                    return "en";
+            }
         }
     }
 }

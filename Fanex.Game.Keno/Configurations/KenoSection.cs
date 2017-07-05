@@ -16,7 +16,7 @@ namespace Fanex.Game.Keno.Configurations
     {
         private static KenoSection _instance;
 
-       /// <summary>
+        /// <summary>
         /// Gets the instance.
         /// </summary>
         /// <value>
@@ -49,6 +49,15 @@ namespace Fanex.Game.Keno.Configurations
             get
             {
                 return (string)base["kenoResultUrl"];
+            }
+        }
+
+        [ConfigurationProperty("lotteryResultUrl", IsRequired = false)]
+        public string LotteryResultUrl
+        {
+            get
+            {
+                return (string)base["lotteryResultUrl"];
             }
         }
 
@@ -88,12 +97,12 @@ namespace Fanex.Game.Keno.Configurations
             }
         }
 
-        [ConfigurationProperty("siteId", IsRequired = false)]
-        public string SiteId
+        [ConfigurationProperty("siteIds", IsRequired = false)]
+        public string SiteIds
         {
             get
             {
-                return (string)base["siteId"];
+                return (string)base["siteIds"];
             }
         }
 

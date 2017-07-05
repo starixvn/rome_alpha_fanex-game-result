@@ -4,7 +4,7 @@
 2. Configuration
 <configSections>
     <sectionGroup name="Game">
-        <section name="Keno" type="Fanex.Game.Keno.Configurations.KenoSection, Fanex.Game.Keno, Version=1.0.0.0, Culture=neutral"/>
+        <section name="Keno" type="Fanex.Game.Keno.Configurations.KenoSection, Fanex.Game.Keno, Version=1.0.0.0, Culture=neutral" />
     </sectionGroup>
 </configSections>
 
@@ -14,19 +14,19 @@
         2200100 E_Account	irafds59cj
         3100100	Agent	JhKI26kocP
         3200100	Agent	JhKI26kocP
-        3300100	Agent	JhKI26kocP 
+        3300100	Agent	JhKI26kocP
         4100300	Bong88	JDkPcipoeC  (789y)
-        4100301	Bong88	JDkPcipoeC  (798y)        
+        4100301	Bong88	JDkPcipoeC  (798y)
         5200200	Internal	nxvqm5hy5s -->
     <!--
         production: authenticateUrl=http://10.40.40.76:8866/authorizeCode
         -->
-    <Keno kenoResultUrl="http://keno1.edge2cast.net/keno" 
-          authenticateUrl="http://qa-acc.starific.net/keno/Test/KenoAuthorization.ashx?vendor={0}&amp;vendorKey={1}&amp;customerID={2}"
+    <Keno kenoResultUrl="http://keno1.edge2cast.net/keno"
+          authenticateUrl="http://qa-acc.starific.net/keno/Test/KenoAuthorization.ashx?vendor={0}&amp;vendorKey={1}&amp;customerID={2}&amp;vendorProduct={3}"
           vendor="Agent"
           vendorKey="JhKI26kocP"
-          siteId="3100100"
-          gameName="keno"/>
+          siteIds="3100100;3200100;3300100"
+          gameName="keno" />
 </Game>
 
 3. Url in action
