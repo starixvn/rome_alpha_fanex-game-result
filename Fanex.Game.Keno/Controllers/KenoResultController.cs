@@ -53,15 +53,13 @@ namespace Fanex.Game.Keno.Controllers
             string resultDate = Request["date"], action = "R", language = Request["language"];
             var objUserId = Request["customerid"];
 
-            var objCustLevelId = Request["custLevelId"];
             var objProductId = Request["productId"];
 
             var userId = string.IsNullOrEmpty(objUserId) ? 0 : Convert.ToInt32(objUserId);
-            var custLevelId = string.IsNullOrEmpty(objCustLevelId) ? 0 : Convert.ToInt32(objCustLevelId);
             var productId = string.IsNullOrEmpty(objProductId) ? 0 : Convert.ToInt32(objProductId);
 
             var resultUrl = GetResultUrl(productId) +
-                BuildParam(resultDate, action, language, userId, custLevelId, productId);
+                BuildParam(resultDate, action, language, userId, productId);
 
             return Redirect(resultUrl);
         }
@@ -91,17 +89,14 @@ namespace Fanex.Game.Keno.Controllers
             string action,
             string language,
             int userId,
-            int custLevelId,
             int productId)
         {
             string container = Request.Url.ToString();
             var param = new StringBuilder();
 
-            var siteId = GetSiteId(custLevelId);
-
             param.Append("?Authorization=" + _gameService.GetAuthorizationKey(userId, productId));
             param.Append("&cust=" + KenoSection.Instance.GameName);
-            param.Append("&siteID=" + siteId);
+            param.Append("&siteID=" + KenoSection.Instance.SiteIds);
             param.Append("&action=" + action);
             param.Append("&lang=" + GetVendorLanguage(language));
             param.Append("&date=" + resultDate);
@@ -109,28 +104,6 @@ namespace Fanex.Game.Keno.Controllers
             param.Append("&redirectURL=" + HttpUtility.UrlEncode(container));
 
             return param.ToString();
-        }
-
-        private string GetSiteId(int custLevelId)
-        {
-            var index = 0;
-
-            switch (custLevelId)
-            {
-                case UserLevelConstants.Super:
-                    index = 0;
-                    break;
-                case UserLevelConstants.Master:
-                    index = 1;
-                    break;
-                default:
-                    index = 2;
-                    break;
-            }
-
-            var siteIds = KenoSection.Instance.SiteIds.Split(',');
-
-            return index <= siteIds.Length ? siteIds[index] : string.Empty;
         }
 
         private string GetResultUrl(int productId)
