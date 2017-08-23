@@ -95,8 +95,8 @@ namespace Fanex.Game.Keno.Controllers
             var param = new StringBuilder();
 
             param.Append("?Authorization=" + _gameService.GetAuthorizationKey(userId, productId));
-            param.Append("&cust=" + KenoSection.Instance.GameName);
-            param.Append("&siteID=" + KenoSection.Instance.SiteIds);
+            param.Append("&cust=" + GetGameName(productId));
+            param.Append("&siteID=" + KenoSection.Instance.SiteId);
             param.Append("&action=" + action);
             param.Append("&lang=" + GetVendorLanguage(language));
             param.Append("&date=" + resultDate);
@@ -108,12 +108,16 @@ namespace Fanex.Game.Keno.Controllers
 
         private string GetResultUrl(int productId)
         {
-            if (productId == 28)
-            {
-                return KenoSection.Instance.LotteryResultUrl;
-            }
+            return productId == ProductIdConstants.Lottery
+                ? KenoSection.Instance.LotteryResultUrl
+                : KenoSection.Instance.KenoResultUrl;
+        }
 
-            return KenoSection.Instance.KenoResultUrl;
+        private string GetGameName(int productId)
+        {
+            return productId == ProductIdConstants.Lottery
+                ? KenoSection.Instance.LotteryGameName
+                : KenoSection.Instance.KenoGameName;
         }
 
         private string GetVendorLanguage(string languageKey)

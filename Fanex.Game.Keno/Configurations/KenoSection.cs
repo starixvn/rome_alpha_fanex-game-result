@@ -97,21 +97,30 @@ namespace Fanex.Game.Keno.Configurations
             }
         }
 
-        [ConfigurationProperty("siteIds", IsRequired = false)]
-        public string SiteIds
+        [ConfigurationProperty("siteId", IsRequired = false)]
+        public string SiteId
         {
             get
             {
-                return (string)base["siteIds"];
+                return (string)base["siteId"];
             }
         }
 
-        [ConfigurationProperty("gameName", IsRequired = false)]
-        public string GameName
+        [ConfigurationProperty("kenoGameName", IsRequired = false)]
+        public string KenoGameName
         {
             get
             {
-                return (string)base["gameName"];
+                return (string)base["kenoGameName"];
+            }
+        }
+
+        [ConfigurationProperty("lotteryGameName", IsRequired = false)]
+        public string LotteryGameName
+        {
+            get
+            {
+                return (string)base["lotteryGameName"];
             }
         }
     }

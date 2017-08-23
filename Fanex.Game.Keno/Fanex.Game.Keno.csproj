@@ -131,6 +131,7 @@
     <Compile Include="App_Start\ModuleRegistrator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Configurations\KenoSection.cs" />
+    <Compile Include="Constants\ProductIdConstants.cs" />
     <Compile Include="Constants\UserLevelConstants.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Business\IKenoGameService.cs" />
