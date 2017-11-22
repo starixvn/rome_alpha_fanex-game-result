@@ -16,6 +16,11 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -126,6 +131,8 @@
     <Compile Include="App_Start\ModuleRegistrator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Configurations\KenoSection.cs" />
+    <Compile Include="Constants\ProductIdConstants.cs" />
+    <Compile Include="Constants\UserLevelConstants.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Business\IKenoGameService.cs" />
     <Compile Include="Business\KenoGameService.cs" />

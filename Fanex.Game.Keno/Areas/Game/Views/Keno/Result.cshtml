@@ -6,7 +6,7 @@
     var resultDeailUrl = Url.Content("~") + "game/keno/kenoresult/resultdetail?date=" + ViewBag.date + "&language=" + ViewBag.language +
                          "&customerId=" + ViewBag.customerId;
 
-    var extendTokenUrl = Url.Content("~") + "game/keno/kenoresult/ExtendToken?userId=" + ViewBag.customerId;
+    var extendTokenUrl = Url.Content("~") + "game/keno/kenoresult/ExtendToken?userId=" + ViewBag.customerId + "&productId=" + ViewBag.productId;
 }
 <html>
 <head>
@@ -15,11 +15,11 @@
 </head>
 <body>
     <h3>
-        Keno results</h3>
-    <form  ENCTYPE="multipart/form-data"  id="target" action="@resultDeailUrl" target="iframeId" method="POST">
-    </form>
+        Keno results
+    </h3>
+    <form ENCTYPE="multipart/form-data" id="target" action="@resultDeailUrl" target="iframeId" method="POST"></form>
     <iframe id="iframeId" name='iframeId' width="800px" height="580px" frameborder="0"
-        style="overflow-x: hidden" left="0" top="0"></iframe>
+            style="overflow-x: hidden" left="0" top="0"></iframe>
     <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -30,15 +30,15 @@
             //            }, 30000)
         })
 
-        function extendToken(){
+        function extendToken() {
             $.ajax({
                 type: 'POST',
                 url: '@extendTokenUrl',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                success: function (rs) {},
-                error: function (e) {},
-                complete: function (e) {}
+                success: function (rs) { },
+                error: function (e) { },
+                complete: function (e) { }
             });
         }
     </script>
