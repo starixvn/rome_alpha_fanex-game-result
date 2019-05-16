@@ -58,8 +58,8 @@ namespace Fanex.Game.Keno.Controllers
             var userId = string.IsNullOrEmpty(objUserId) ? 0 : Convert.ToInt32(objUserId);
             var productId = string.IsNullOrEmpty(objProductId) ? 0 : Convert.ToInt32(objProductId);
 
-            var resultUrl = GetResultUrl(productId) +
-                BuildParam(resultDate, action, language, userId, productId);
+            var resultUrl = GetResultUrl(productId);
+            resultUrl = resultUrl + (resultUrl.Contains("?") ? "&" : "?") + BuildParam(resultDate, action, language, userId, productId);
 
             return Redirect(resultUrl);
         }
@@ -94,7 +94,7 @@ namespace Fanex.Game.Keno.Controllers
             string container = Request.Url.ToString();
             var param = new StringBuilder();
 
-            param.Append("?Authorization=" + _gameService.GetAuthorizationKey(userId, productId));
+            param.Append("Authorization=" + _gameService.GetAuthorizationKey(userId, productId));
             param.Append("&cust=" + GetGameName(productId));
             param.Append("&siteID=" + KenoSection.Instance.SiteId);
             param.Append("&action=" + action);
