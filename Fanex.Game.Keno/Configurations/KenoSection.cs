@@ -43,6 +43,15 @@ namespace Fanex.Game.Keno.Configurations
             }
         }
 
+        [ConfigurationProperty("tableGamesResultUrl", IsRequired = false)]
+        public string TableGamesResultUrl
+        {
+            get
+            {
+                return (string)base["tableGamesResultUrl"];
+            }
+        }
+
         [ConfigurationProperty("kenoResultUrl", IsRequired = false)]
         public string KenoResultUrl
         {
@@ -121,6 +130,24 @@ namespace Fanex.Game.Keno.Configurations
             get
             {
                 return (string)base["lotteryGameName"];
+            }
+        }
+
+        [ConfigurationProperty("TableGamesGameName", IsRequired = false)]
+        public string TableGamesGameName
+        {
+            get
+            {
+                return (string)base["TableGamesGameName"];
+            }
+        }
+
+        [ConfigurationProperty("Debug", IsRequired = false)]
+        public string IsDebug
+        {
+            get
+            {
+                return (string)base["Debug"];
             }
         }
     }

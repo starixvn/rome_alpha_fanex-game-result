@@ -11,11 +11,13 @@
 namespace Fanex.Game.Keno.Business
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Net;
     using System.Text;
     using Fanex.Game.Core.Extensions;
     using Fanex.Game.Keno.Configurations;
+    using Fanex.Game.Keno.Constants;
     using Fanex.Game.Keno.Models;
     using Newtonsoft.Json;
 
@@ -24,6 +26,13 @@ namespace Fanex.Game.Keno.Business
     /// </summary>
     public class KenoGameService : IKenoGameService
     {
+        private readonly Dictionary<int, int> VendorProduct = new Dictionary<int, int>
+        {
+            {ProductIdConstants.Keno,1},
+            {ProductIdConstants.Lottery,28},
+            {ProductIdConstants.TableGames,40},
+        };
+
         /// <summary>
         /// Gets the authorization key.
         /// </summary>
@@ -31,48 +40,37 @@ namespace Fanex.Game.Keno.Business
         /// <returns>Authorization key.</returns>
         public string GetAuthorizationKey(int userId, int productId)
         {
-            string authorizationKey;
-            try
+            string authorizationUrl = KenoSection.Instance.AuthenticateUrl;
+            string vendor = KenoSection.Instance.Vendor;
+            string vendorKey = KenoSection.Instance.VendorKey;
+            authorizationUrl = string.Format(authorizationUrl, vendor, vendorKey, userId, GetVendorProduct(productId));
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(authorizationUrl);
+
+            request.Method = "Get";
+            request.Accept = "application/json";
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            StringBuilder output = new StringBuilder();
+            output.Append(reader.ReadToEnd());
+            response.Close();
+
+            var apiResponse = output.ToString();
+            AuthorizationResult authorizationResult = JsonConvert.DeserializeObject<AuthorizationResult>(apiResponse);
+
+            string errorCode = Convert.ToString(authorizationResult.ErrorCode);
+
+            if (!errorCode.Equals("0"))
             {
-                string authorizationUrl = KenoSection.Instance.AuthenticateUrl;
-                string vendor = KenoSection.Instance.Vendor;
-                string vendorKey = KenoSection.Instance.VendorKey;
-                authorizationUrl = string.Format(authorizationUrl, vendor, vendorKey, userId, GetVendorProduct(productId));
-
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(authorizationUrl);
-
-                request.Method = "Get";
-                request.Accept = "application/json";
-
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                StringBuilder output = new StringBuilder();
-                output.Append(reader.ReadToEnd());
-                response.Close();
-
-                var apiResponse = output.ToString();
-                AuthorizationResult authorizationResult = JsonConvert.DeserializeObject<AuthorizationResult>(apiResponse);
-
-                string errorCode = Convert.ToString(authorizationResult.ErrorCode);
-
-                if (!errorCode.Equals("0"))
-                {
-                    throw new Exception("AuthorizationKeno Error UserID:" + userId + Environment.NewLine +
-                        "ErrorCode:" + errorCode + Environment.NewLine +
-                        "ErrorMsg:" + authorizationResult.ErrorMsg + Environment.NewLine +
-                        "Request URL:" + authorizationUrl + Environment.NewLine +
-                        "API Response: " + apiResponse);
-                }
-
-                authorizationKey = authorizationResult.Data.Authorization;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-                //authorizationKey = @"h4P4!IAAAAP6x4u6g98eXN0GiWUYfhwLOARG8aWK2pZXZYBPS_Nvt4QAAAAGmGJuF358Vh5615NgIFpIFa0kZCajNE-76B9yiSs6uZ5aPoqS_cmWY2pUO_AA_aQt0LRc-HRAMUZJODFoj8ReHT2zGN6O9K3uRD_aAzlaex9xE4JhuZUZHVgqAmheR89Pqya1dZEgSXqUm7CweCq21-RXrR8JQqu3dc1jLTI_Kax9c8udzXYKtaV0Vr9JkM4OBLcNl2dErheQy5LtoKhbIgQSk1eXrfdLXRorXV3IVeigdgXVvcgDh3IIqzPPGMI1l5RXzqeQtMaJQNSkRuC5PfccqAQ3aYcPRlmKCUCojcg";
+                throw new Exception("AuthorizationKeno Error UserID:" + userId + Environment.NewLine +
+                    "ErrorCode:" + errorCode + Environment.NewLine +
+                    "ErrorMsg:" + authorizationResult.ErrorMsg + Environment.NewLine +
+                    "Request URL:" + authorizationUrl + Environment.NewLine +
+                    "API Response: " + apiResponse);
             }
 
-            return authorizationKey;
+            return authorizationResult.Data.Authorization;
         }
 
         /// <summary>
@@ -83,52 +81,40 @@ namespace Fanex.Game.Keno.Business
         public AuthorizationResult ExtendToken(int userId, int productId)
         {
             AuthorizationResult extendTokenResult = new AuthorizationResult();
-            try
+            string extendTokenUrl = KenoSection.Instance.ExtendTokenUrl;
+            string vendor = KenoSection.Instance.Vendor;
+            string vendorKey = KenoSection.Instance.VendorKey;
+            extendTokenUrl = string.Format(extendTokenUrl, vendor, vendorKey, userId, GetVendorProduct(productId));
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(extendTokenUrl);
+
+            request.Method = "Get";
+            request.Accept = "application/json";
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            StringBuilder output = new StringBuilder();
+            output.Append(reader.ReadToEnd());
+            response.Close();
+
+            var apiResponse = output.ToString();
+            extendTokenResult = JsonConvert.DeserializeObject<AuthorizationResult>(apiResponse);
+
+            string errorCode = Convert.ToString(extendTokenResult.ErrorCode);
+
+            if (!errorCode.Equals("0"))
             {
-                string extendTokenUrl = KenoSection.Instance.ExtendTokenUrl;
-                string vendor = KenoSection.Instance.Vendor;
-                string vendorKey = KenoSection.Instance.VendorKey;
-                extendTokenUrl = string.Format(extendTokenUrl, vendor, vendorKey, userId, GetVendorProduct(productId));
-
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(extendTokenUrl);
-
-                request.Method = "Get";
-                request.Accept = "application/json";
-
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                StringBuilder output = new StringBuilder();
-                output.Append(reader.ReadToEnd());
-                response.Close();
-
-                var apiResponse = output.ToString();
-                extendTokenResult = JsonConvert.DeserializeObject<AuthorizationResult>(apiResponse);
-
-                string errorCode = Convert.ToString(extendTokenResult.ErrorCode);
-
-                if (!errorCode.Equals("0"))
-                {
-                    throw new Exception("Extend Token Error UserID:" + userId + Environment.NewLine +
-                        "ErrorCode:" + errorCode + Environment.NewLine +
-                        "ErrorMsg:" + extendTokenResult.ErrorMsg + Environment.NewLine +
-                        "Request URL:" + extendTokenUrl + Environment.NewLine +
-                        "API Response: " + apiResponse);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                throw new Exception("Extend Token Error UserID:" + userId + Environment.NewLine +
+                    "ErrorCode:" + errorCode + Environment.NewLine +
+                    "ErrorMsg:" + extendTokenResult.ErrorMsg + Environment.NewLine +
+                    "Request URL:" + extendTokenUrl + Environment.NewLine +
+                    "API Response: " + apiResponse);
             }
 
             return extendTokenResult;
         }
 
         private int GetVendorProduct(int productId)
-        {
-            // Keno = 8, spec: vendorProduct = 1 for Keno
-            // Lottery = 28, spec: vendorProduct = 28 for Lottery
-
-            return productId == 8 ? 1 : productId;
-        }
+            => VendorProduct[productId];
     }
 }

@@ -11,6 +11,7 @@
 namespace Fanex.Game.Keno.Controllers
 {
     using System;
+    using System.Collections.Generic;
     using System.Text;
     using System.Web;
     using System.Web.Mvc;
@@ -24,6 +25,19 @@ namespace Fanex.Game.Keno.Controllers
     public class KenoResultController : BaseController
     {
         private readonly IKenoGameService _gameService;
+        private readonly Dictionary<int, string> GamesName = new Dictionary<int, string>
+        {
+            { ProductIdConstants.Lottery, KenoSection.Instance.LotteryGameName},
+            { ProductIdConstants.Keno, KenoSection.Instance.KenoGameName},
+            { ProductIdConstants.TableGames, KenoSection.Instance.TableGamesGameName}
+        };
+
+        private readonly Dictionary<int, string> ResultUrls = new Dictionary<int, string>
+        {
+            { ProductIdConstants.Lottery, KenoSection.Instance.LotteryResultUrl},
+            { ProductIdConstants.Keno, KenoSection.Instance.KenoResultUrl},
+            { ProductIdConstants.TableGames, KenoSection.Instance.TableGamesResultUrl}
+        };
 
         public KenoResultController(IKenoGameService kenoGameService)
         {
@@ -44,22 +58,22 @@ namespace Fanex.Game.Keno.Controllers
             return View(@"~\Areas\Game\Views\Keno\Result.cshtml");
         }
 
-        /// <summary>
-        /// Results the detail.
-        /// </summary>
-        /// <returns>Page that load the KENO result.</returns>
         public ActionResult ResultDetail()
         {
             string resultDate = Request["date"], action = "R", language = Request["language"];
             var objUserId = Request["customerid"];
-
             var objProductId = Request["productId"];
-
             var userId = string.IsNullOrEmpty(objUserId) ? 0 : Convert.ToInt32(objUserId);
             var productId = string.IsNullOrEmpty(objProductId) ? 0 : Convert.ToInt32(objProductId);
+            var device = Request["device"];
 
             var resultUrl = GetResultUrl(productId);
-            resultUrl = resultUrl + (resultUrl.Contains("?") ? "&" : "?") + BuildParam(resultDate, action, language, userId, productId);
+            resultUrl = resultUrl + (resultUrl.Contains("?") ? "&" : "?") + BuildParam(resultDate, action, language, userId, productId, device);
+            if (KenoSection.Instance.IsDebug == "1")
+            {
+                throw new Exception("Result URL Request UserID:" + userId + Environment.NewLine +
+                        "Request URL:" + resultUrl + Environment.NewLine);
+            }
 
             return Redirect(resultUrl);
         }
@@ -76,20 +90,13 @@ namespace Fanex.Game.Keno.Controllers
             return Json(result);
         }
 
-        /// <summary>
-        /// Builds the parameter.
-        /// </summary>
-        /// <param name="resultDate">The result date.</param>
-        /// <param name="action">The action.</param>
-        /// <param name="language">The language.</param>
-        /// <param name="userId">The user identifier.</param>
-        /// <returns>KENO URL to get result.</returns>
         private string BuildParam(
             string resultDate,
             string action,
             string language,
             int userId,
-            int productId)
+            int productId,
+            string device)
         {
             string container = Request.Url.ToString();
             var param = new StringBuilder();
@@ -101,24 +108,21 @@ namespace Fanex.Game.Keno.Controllers
             param.Append("&lang=" + GetVendorLanguage(language));
             param.Append("&date=" + resultDate);
             param.Append("&st=B");
+            if (!string.IsNullOrEmpty(device))
+            {
+                param.Append("&app=" + device);
+            }
+
             param.Append("&redirectURL=" + HttpUtility.UrlEncode(container));
 
             return param.ToString();
         }
 
         private string GetResultUrl(int productId)
-        {
-            return productId == ProductIdConstants.Lottery
-                ? KenoSection.Instance.LotteryResultUrl
-                : KenoSection.Instance.KenoResultUrl;
-        }
+            => ResultUrls[productId];
 
         private string GetGameName(int productId)
-        {
-            return productId == ProductIdConstants.Lottery
-                ? KenoSection.Instance.LotteryGameName
-                : KenoSection.Instance.KenoGameName;
-        }
+            => GamesName[productId];
 
         private string GetVendorLanguage(string languageKey)
         {
